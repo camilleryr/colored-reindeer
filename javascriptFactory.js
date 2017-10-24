@@ -1,20 +1,22 @@
-const coloredReindeerBuilder = function (color) {
-    const reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+const colors = ["Blue", "Red", "Orange", "Purple", "Goldenrod", "Aquamarine", "Olive", "Black", "Fuchsia", "Chocolate", "Salmon", "Amaranth"]
 
-    for (let index = 0; index < reindeer.length; index++) {
-        coloredReindeer.push(Object.create(null, {
-            "name" : {
-            value: reindeer[index],
-            writable : true,
-            enumerable : true},
-
-            "color" : {
-            value: color[index],
-            writable : true,
-            enumerable : true}
-            })
-        )
-    }
-}
+const reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 
 let coloredReindeer = []
+
+reindeer.forEach((name, index) => {
+
+    coloredReindeer.push(Object.create(null, {
+        "name" : {
+        value: name,
+        writable : true,
+        enumerable : true},
+
+        "color" : {
+        value: colors[index],
+        writable : true,
+        enumerable : true}
+        })
+    )
+})
+
